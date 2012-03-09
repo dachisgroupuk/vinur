@@ -16,7 +16,7 @@
 			<?php do_action( 'vinur_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'vinur' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'vinur' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'vinur' ), 'vinur', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'vinur' ), 'vinur', '<a href="http://dachisgroup.com/" rel="designer">Dachis Group</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer .site-footer -->
 </div><!-- #page .hfeed .site -->
