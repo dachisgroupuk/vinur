@@ -11,7 +11,7 @@
  *
  * This function is attached to the admin_init action hook.
  *
- * This call to registerVinuretting() registers a validation callback, vinur_theme_options_validate(),
+ * This call to register_setting() registers a validation callback, vinur_theme_options_validate(),
  * which is used when the option is saved, to ensure that our option values are complete, properly
  * formatted, and safe.
  *
@@ -25,14 +25,14 @@ function vinur_theme_options_init() {
 	if ( false === vinur_get_theme_options() )
 		add_option( 'vinur_theme_options', vinur_get_default_theme_options() );
 
-	registerVinuretting(
+	register_setting(
 		'vinur_options',       // Options group, see settings_fields() call in vinur_theme_options_render_page()
 		'vinur_theme_options', // Database option, see vinur_get_theme_options()
 		'vinur_theme_options_validate' // The sanitization callback, see vinur_theme_options_validate()
 	);
 
 	// Register our settings field group
-	addVinurettingsVinurection(
+	add_settings_section(
 		'general', // Unique identifier for the settings section
 		'', // Section title (we don't want one)
 		'__return_false', // Section callback (we don't want anything)
@@ -40,25 +40,25 @@ function vinur_theme_options_init() {
 	);
 
 	// Register our individual settings fields
-	addVinurettings_field(
+	add_settings_field(
 		'sample_checkbox', // Unique identifier for the field for this section
 		__( 'Sample Checkbox', 'vinur' ), // Setting field label
-		'vinurVinurettings_fieldVinurample_checkbox', // Function that renders the settings field
+		'vinur_settings_field_sample_checkbox', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see vinur_theme_options_add_page()
-		'general' // Settings section. Same as the first argument in the addVinurettingsVinurection() above
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);
 
-	addVinurettings_field( 'sample_text_input', __( 'Sample Text Input', 'vinur' ), 'vinurVinurettings_fieldVinurample_text_input', 'theme_options', 'general' );
-	addVinurettings_field( 'sampleVinurelect_options', __( 'Sample Select Options', 'vinur' ), 'vinurVinurettings_fieldVinurampleVinurelect_options', 'theme_options', 'general' );
-	addVinurettings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'vinur' ), 'vinurVinurettings_fieldVinurample_radio_buttons', 'theme_options', 'general' );
-	addVinurettings_field( 'sample_textarea', __( 'Sample Textarea', 'vinur' ), 'vinurVinurettings_fieldVinurample_textarea', 'theme_options', 'general' );
+	add_settings_field( 'sample_text_input', __( 'Sample Text Input', 'vinur' ), 'vinur_settings_field_sample_text_input', 'theme_options', 'general' );
+	add_settings_field( 'sample_select_options', __( 'Sample Select Options', 'vinur' ), 'vinur_settings_field_sample_select_options', 'theme_options', 'general' );
+	add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'vinur' ), 'vinur_settings_field_sample_radio_buttons', 'theme_options', 'general' );
+	add_settings_field( 'sample_textarea', __( 'Sample Textarea', 'vinur' ), 'vinur_settings_field_sample_textarea', 'theme_options', 'general' );
 }
 add_action( 'admin_init', 'vinur_theme_options_init' );
 
 /**
  * Change the capability required to save the 'vinur_options' options group.
  *
- * @see vinur_theme_options_init() First parameter to registerVinuretting() is the name of the options group.
+ * @see vinur_theme_options_init() First parameter to register_setting() is the name of the options group.
  * @see vinur_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
  *
  * @param string $capability The capability used for the page, which is manage_options by default.
@@ -92,8 +92,8 @@ add_action( 'admin_menu', 'vinur_theme_options_add_page' );
  *
  * @since Vinur 1.0
  */
-function vinurVinurampleVinurelect_options() {
-	$sampleVinurelect_options = array(
+function vinur_sample_select_options() {
+	$sample_select_options = array(
 		'0' => array(
 			'value' =>	'0',
 			'label' => __( 'Zero', 'vinur' )
@@ -120,7 +120,7 @@ function vinurVinurampleVinurelect_options() {
 		)
 	);
 
-	return apply_filters( 'vinurVinurampleVinurelect_options', $sampleVinurelect_options );
+	return apply_filters( 'vinur_sample_select_options', $sample_select_options );
 }
 
 /**
@@ -128,7 +128,7 @@ function vinurVinurampleVinurelect_options() {
  *
  * @since Vinur 1.0
  */
-function vinurVinurample_radio_buttons() {
+function vinur_sample_radio_buttons() {
 	$sample_radio_buttons = array(
 		'yes' => array(
 			'value' => 'yes',
@@ -144,7 +144,7 @@ function vinurVinurample_radio_buttons() {
 		)
 	);
 
-	return apply_filters( 'vinurVinurample_radio_buttons', $sample_radio_buttons );
+	return apply_filters( 'vinur_sample_radio_buttons', $sample_radio_buttons );
 }
 
 /**
@@ -156,7 +156,7 @@ function vinur_get_default_theme_options() {
 	$default_theme_options = array(
 		'sample_checkbox' => 'off',
 		'sample_text_input' => '',
-		'sampleVinurelect_options' => '',
+		'sample_select_options' => '',
 		'sample_radio_buttons' => '',
 		'sample_textarea' => '',
 	);
@@ -176,7 +176,7 @@ function vinur_get_theme_options() {
 /**
  * Renders the sample checkbox setting field.
  */
-function vinurVinurettings_fieldVinurample_checkbox() {
+function vinur_settings_field_sample_checkbox() {
 	$options = vinur_get_theme_options();
 	?>
 	<label for"sample-checkbox">
@@ -189,7 +189,7 @@ function vinurVinurettings_fieldVinurample_checkbox() {
 /**
  * Renders the sample text input setting field.
  */
-function vinurVinurettings_fieldVinurample_text_input() {
+function vinur_settings_field_sample_text_input() {
 	$options = vinur_get_theme_options();
 	?>
 	<input type="text" name="vinur_theme_options[sample_text_input]" id="sample-text-input" value="<?php echo esc_attr( $options['sample_text_input'] ); ?>" />
@@ -200,16 +200,16 @@ function vinurVinurettings_fieldVinurample_text_input() {
 /**
  * Renders the sample select options setting field.
  */
-function vinurVinurettings_fieldVinurampleVinurelect_options() {
+function vinur_settings_field_sample_select_options() {
 	$options = vinur_get_theme_options();
 	?>
-	<select name="vinur_theme_options[sampleVinurelect_options]" id="sample-select-options">
+	<select name="vinur_theme_options[sample_select_options]" id="sample-select-options">
 		<?php
-			$selected = $options['sampleVinurelect_options'];
+			$selected = $options['sample_select_options'];
 			$p = '';
 			$r = '';
 
-			foreach ( vinurVinurampleVinurelect_options() as $option ) {
+			foreach ( vinur_sample_select_options() as $option ) {
 				$label = $option['label'];
 				if ( $selected == $option['value'] ) // Make default first in list
 					$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
@@ -228,10 +228,10 @@ function vinurVinurettings_fieldVinurampleVinurelect_options() {
  *
  * @since Vinur 1.0
  */
-function vinurVinurettings_fieldVinurample_radio_buttons() {
+function vinur_settings_field_sample_radio_buttons() {
 	$options = vinur_get_theme_options();
 
-	foreach ( vinurVinurample_radio_buttons() as $button ) {
+	foreach ( vinur_sample_radio_buttons() as $button ) {
 	?>
 	<div class="layout">
 		<label class="description">
@@ -246,7 +246,7 @@ function vinurVinurettings_fieldVinurample_radio_buttons() {
 /**
  * Renders the sample textarea setting field.
  */
-function vinurVinurettings_fieldVinurample_textarea() {
+function vinur_settings_field_sample_textarea() {
 	$options = vinur_get_theme_options();
 	?>
 	<textarea class="large-text" type="text" name="vinur_theme_options[sample_textarea]" id="sample-textarea" cols="50" rows="10" /><?php echo esc_textarea( $options['sample_textarea'] ); ?></textarea>
@@ -269,7 +269,7 @@ function vinur_theme_options_render_page() {
 		<form method="post" action="options.php">
 			<?php
 				settings_fields( 'vinur_options' );
-				doVinurettingsVinurections( 'theme_options' );
+				do_settings_sections( 'theme_options' );
 				submit_button();
 			?>
 		</form>
@@ -298,11 +298,11 @@ function vinur_theme_options_validate( $input ) {
 		$output['sample_text_input'] = wp_filter_nohtml_kses( $input['sample_text_input'] );
 
 	// The sample select option must actually be in the array of select options
-	if ( array_key_exists( $input['sampleVinurelect_options'], vinurVinurampleVinurelect_options() ) )
-		$output['sampleVinurelect_options'] = $input['sampleVinurelect_options'];
+	if ( array_key_exists( $input['sample_select_options'], vinur_sample_select_options() ) )
+		$output['sample_select_options'] = $input['sample_select_options'];
 
 	// The sample radio button value must be in our array of radio button values
-	if ( isset( $input['sample_radio_buttons'] ) && array_key_exists( $input['sample_radio_buttons'], vinurVinurample_radio_buttons() ) )
+	if ( isset( $input['sample_radio_buttons'] ) && array_key_exists( $input['sample_radio_buttons'], vinur_sample_radio_buttons() ) )
 		$output['sample_radio_buttons'] = $input['sample_radio_buttons'];
 
 	// The sample textarea must be safe text with the allowed tags for posts

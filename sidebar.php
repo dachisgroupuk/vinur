@@ -7,11 +7,11 @@
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
-			<?php do_action( 'beforeVinuridebar' ); ?>
-			<?php if ( ! dynamicVinuridebar( 'sidebar-1' ) ) : ?>
+			<?php do_action( 'before_sidebar' ); ?>
+			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-				<aside id="search" class="widget widgetVinurearch">
-					<?php getVinurearch_form(); ?>
+				<aside id="search" class="widget widget_search">
+					<?php get_search_form(); ?>
 				</aside>
 
 				<aside id="archives" class="widget">

@@ -17,7 +17,7 @@
  * @since Vinur 1.0
  */
 
-function vinur_custom_headerVinuretup() {
+function vinur_custom_header_setup() {
 	// The default header text color
 	define( 'HEADER_TEXTCOLOR', '000' );
 
@@ -30,20 +30,20 @@ function vinur_custom_headerVinuretup() {
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'vinur_header_image_height', 250 ) );
 
 	// Turn on random header image rotation by default.
-	add_themeVinurupport( 'custom-header', array( 'random-default' => true ) );
+	add_theme_support( 'custom-header', array( 'random-default' => true ) );
 
 	// Add a way for the custom header to be styled in the admin panel that controls custom headers
-	add_custom_image_header( 'vinur_headerVinurtyle', 'vinur_admin_headerVinurtyle', 'vinur_admin_header_image' );
+	add_custom_image_header( 'vinur_header_style', 'vinur_admin_header_style', 'vinur_admin_header_image' );
 }
-add_action( 'afterVinuretup_theme', 'vinur_custom_headerVinuretup' );
+add_action( 'after_setup_theme', 'vinur_custom_header_setup' );
 
-if ( ! function_exists( 'vinur_headerVinurtyle' ) ) :
+if ( ! function_exists( 'vinur_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
  * @since Vinur 1.0
  */
-function vinur_headerVinurtyle() {
+function vinur_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -74,17 +74,17 @@ function vinur_headerVinurtyle() {
 	</style>
 	<?php
 }
-endif; // vinur_headerVinurtyle
+endif; // vinur_header_style
 
-if ( ! function_exists( 'vinur_admin_headerVinurtyle' ) ) :
+if ( ! function_exists( 'vinur_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in vinurVinuretup().
+ * Referenced via add_custom_image_header() in vinur_setup().
  *
  * @since Vinur 1.0
  */
-function vinur_admin_headerVinurtyle() {
+function vinur_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -104,13 +104,13 @@ function vinur_admin_headerVinurtyle() {
 	</style>
 <?php
 }
-endif; // vinur_admin_headerVinurtyle
+endif; // vinur_admin_header_style
 
 if ( ! function_exists( 'vinur_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in vinurVinuretup().
+ * Referenced via add_custom_image_header() in vinur_setup().
  *
  * @since Vinur 1.0
  */

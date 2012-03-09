@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'vinur' ), '<span>' . getVinurearch_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'vinur' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
 				<?php vinur_content_nav( 'nav-above' ); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'vinur' ); ?></p>
-						<?php getVinurearch_form(); ?>
+						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
@@ -46,5 +46,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary .site-content -->
 
-<?php getVinuridebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

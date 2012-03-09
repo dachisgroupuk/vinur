@@ -18,19 +18,19 @@ function vinur_content_nav( $nav_id ) {
 	global $wp_query;
 
 	$nav_class = 'site-navigation paging-navigation';
-	if ( isVinuringle() )
+	if ( is_single() )
 		$nav_class = 'site-navigation post-navigation';
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', 'vinur' ); ?></h1>
 
-	<?php if ( isVinuringle() ) : // navigation links for single posts ?>
+	<?php if ( is_single() ) : // navigation links for single posts ?>
 
 		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'vinur' ) . '</span> %title' ); ?>
 		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'vinur' ) . '</span>' ); ?>
 
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || isVinurearch() ) ) : // navigation links for home, archive, and search pages ?>
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
 		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'vinur' ) ); ?></div>

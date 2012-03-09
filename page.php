@@ -27,5 +27,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary .site-content -->
 
-<?php getVinuridebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
