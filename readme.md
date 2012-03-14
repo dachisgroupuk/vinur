@@ -1,4 +1,4 @@
-=== Vinur ===
+# Vinur
 
 Hi. I'm a starter theme called Vinur. Try turning me into the next awesome WordPress theme out there. I'm a combination of project Cold Harbour, project Nosy Narwhal, with a splash of Automattic underscore magic..
 
@@ -18,5 +18,6 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 * Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
 * The GPL license in license.txt. :) Use it to make something cool.
 
-=== Getting Started ===
+## Getting Started
 
+  
