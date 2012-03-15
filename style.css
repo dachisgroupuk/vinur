@@ -12,3 +12,17 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
+
+
+
+
+
+/* =Widgets
+----------------------------------------------- */
+
+#sidebar aside.widget ul{
+	width: 93.75%; /* 300px/320px */
+	padding: 0 3.125% 20px 3.125%; /* 10px/320px */
+    font-size: 1.3em;
+    line-height: 1.6em;
+}
