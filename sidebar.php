@@ -6,16 +6,17 @@
  * @since Vinur 1.0
  */
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php do_action( 'before_sidebar' ); ?>
-			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+<section id="sidebar">
+    <?php do_action( 'before_sidebar' ); ?>
+	<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+        
+        <aside id="search" class="widget widget_search">
+            <h3 class="widget-title">Search</h3>
+			<?php get_search_form(); ?>
+		</aside>
 
-				<aside id="search" class="widget widget_search">
-					<?php get_search_form(); ?>
-				</aside>
-
-				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', 'vinur' ); ?></h1>
+		<aside id="archives" class="widget">
+			<h1 class="widget-title"><?php _e( 'Archives', 'vinur' ); ?></h1>
 					<ul>
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 					</ul>
@@ -28,7 +29,7 @@
 						<li><?php wp_loginout(); ?></li>
 						<?php wp_meta(); ?>
 					</ul>
-				</aside>
+		</aside>
 
-			<?php endif; // end sidebar widget area ?>
-		</div><!-- #secondary .widget-area -->
+	<?php endif; // end sidebar widget area ?>
+</section>
