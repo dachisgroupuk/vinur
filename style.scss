@@ -1,0 +1,62 @@
+/*
+Theme Name: Vinur
+Theme URI: https://wpcom-themes.svn.automattic.com/Vinur/
+Author: Dachisgroup
+Author URI: http://dachisgroup.com/
+Description: Starter theme combining projects Cold Harbour and Nosy Narwhal
+Version: 1.0
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/* =Widgets
+----------------------------------------------- */
+
+#sidebar aside.widget ul{
+	width: 93.75%; /* 300px/320px */
+	padding: 0 3.125% 20px 3.125%; /* 10px/320px */
+    font-size: 1.3em;
+    line-height: 1.6em;
+}
+
+/*
+  Older safari versions don't even render the search type input.
+  With this, it will be displayed as a textbox
+*/
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+#navigation {
+  li {
+    > ul {
+      display: none;
+      li {
+        font-size: 90%;
+      }
+    }
+    
+    &:hover > ul {
+      display: list-item;
+    }
+  }
+}
+
+article {
+  font-size: 150%;
+  line-height: 150%;
+  padding: 2%;
+  
+  h1 {
+    font-size: 150%;
+    line-height: 150%;
+  }
+  
+  .entry-content {
+    font-size: 100%;
+    line-height: 100%;
+  }
+}
