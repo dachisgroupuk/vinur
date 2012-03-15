@@ -72,20 +72,40 @@
 <body <?php body_class(); ?> role="document">
 
 <div id="site" role="document">
+    
+    <?php do_action( 'before' ); ?>
+    
+    <header id="header" role="banner">
+      
+        <div class="alert-message warning hide" role="alert">
+            <a class="close" href="#">&times;</a>
+            <p>The old monks of Dunfermline were very fond of them. They had a great porpoise grant from the crown.</p>
+        </div>  
+        
+        <div id="profile">
+            <dl class="profile">
+                <dt id="nickname">
+                    <img src="<?php echo get_stylesheet_directory_uri();?>/images/avatars/Tiny 25px x 25px/Males/Joe.jpg" width="25" height="25" alt="Joe">
+                    <a href="" title="nickname">nickname</a>
+                </dt>
+            </dl>
+        </div>
+          
+        <hgroup>
+            <h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+        </hgroup><!-- #hgroup -->
+                    
+        <div id="access">
+            <div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+            <div class="skip-link"><a class="assistive-text" href="#sidebar" title="Skip to secondary content">Skip to secondary content</a></div>
+        </div><!-- #access nav -->
+            
+        <nav id="navigation" role="navigation">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </nav><!-- #main nav -->
+		
+    </header><!-- #header -->
 
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
 
-		<nav role="navigation" class="site-navigation main-navigation">
-			<h1 class="assistive-text"><?php _e( 'Menu', 'vinur' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'vinur' ); ?>"><?php _e( 'Skip to content', 'vinur' ); ?></a></div>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>
-	</header><!-- #masthead .site-header -->
-
-	<div id="main">
+	<div id="content">
