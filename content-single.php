@@ -6,13 +6,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+	<header class="post-header">  
+        <h1><?php the_title(); ?></h1>
+            
+        <div class="post-meta">
+            <?php vinur_posted_on(); ?>
+        </div>
+    </header>
 
-		<div class="entry-meta">
-			<?php vinur_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
