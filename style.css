@@ -13,9 +13,107 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
+/* =Navigation
+----------------------------------------------- */
+.post-navigation {
+    float: left;
+    width: 93.75%;
+    padding: 0 3.125% 10px 3.125%;
+    font-size: 1.7em;
+    line-height: 1.471em;
+}
+
+#content .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.bypostauthor {
+}
+
+#posts #comments{
+    float: left;
+    width: 93.75%;
+    margin: 10px 0;
+    padding: 0 3.125% 10px 3.125%;
+}
+
+h2.comments-title {
+	font-size: 2.2em; 
+	line-height: 1em;
+	margin: 0; /*10px*/
+}
+#respond, h3#reply-title, #respond label, .nopassword, .nocomments {
+    font-size: 1.3em;
+    line-height: 1.6em;    
+}
+
+
+h3#reply-title{
+	margin: 0;
+    padding-bottom: 0.5em;
+    width: 93.75%;
+    clear: both;
+}
+
+#respond label{
+    margin-top: 1em;
+	clear: both;
+    display: block;
+}
+#respond textarea {
+	width: 93.75%;
+    margin: 10px 0;
+    padding: 0.5em;
+    resize: vertical;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+
+.nopassword,
+.nocomments {
+	text-align: center;
+}
 
 
 
+.commentlist li{
+    width: 93.75%;
+    clear:  both;
+    display: block;
+}
+.commentlist li ul li{
+    width: 96.85%;
+    margin-left: 3.125%;
+}
+#posts article.comment{
+    clear: both;
+    padding: 3.125%;
+    margin: 0;
+}
+
+.comment-author{
+    font-size: 1.6em;
+    line-height: 1.8em;
+    clear: both;
+}
+.comment-author .avatar{
+    float: left;
+    margin-right:  1em;
+}
+.comment-content{
+    padding-top: 3.125%;
+    clear: both;
+}
 
 /* =Widgets
 ----------------------------------------------- */
@@ -26,3 +124,5 @@ and Blueprint http://www.blueprintcss.org/
     font-size: 1.3em;
     line-height: 1.6em;
 }
+
+

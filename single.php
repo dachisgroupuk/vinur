@@ -7,10 +7,8 @@
  */
 
 get_header(); ?>
-
-		<div id="primary" class="site-content">
-			<div id="content" role="main">
-
+    <section id="posts">
+    
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php vinur_content_nav( 'nav-above' ); ?>
@@ -27,8 +25,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary .site-content -->
+    </section>   
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
