@@ -10,8 +10,7 @@
 
 get_header(); ?>
 
-		<section id="primary" class="site-content">
-			<div id="content" role="main">
+		<section id="posts" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -100,9 +99,7 @@ get_header(); ?>
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>
-
-			</div><!-- #content -->
-		</section><!-- #primary .site-content -->
+        </section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
