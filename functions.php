@@ -137,3 +137,37 @@ add_action( 'wp_enqueue_scripts', 'vinur_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+/**
+ * Returns the URI to an image, checking if it exists in the current theme,
+ * and then going onto the parents and grandparents.
+ *
+ * @param string $image_path
+ *		Image path from the theme root 
+ * @return string
+ *    The URI to the image
+ * @author Maarten Jacobs
+ */
+function get_image_via_ancestors($image_path) {
+  $current_theme = get_option('stylesheet');
+  
+	// 1. Try to get the image from the currently active theme
+	$current_uri = get_stylesheet_directory_uri() . $image_path;
+	if (!file_exists($current_path)) {
+		// 2. Try the parent theme
+		// The parent is stored inside the template
+		$parent = get_option('template');
+		
+		if ($parent) {
+			$parent_path = get_theme_root() . "/$parent/" . $image_path;
+			if (file_exists($parent_path)) {
+				return get_theme_root_uri() . "/$parent" . $image_path;
+			}
+		}
+	} else {
+		return get_theme_root() . "/$current_theme" . $image_path;
+	}
+	
+	// TODO: provide default image. Which just so happens needs to be in the theme :|
+	return '';
+}

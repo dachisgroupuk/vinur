@@ -85,7 +85,9 @@
         <div id="profile">
             <dl class="profile">
                 <dt id="nickname">
-                    <img src="<?php echo get_stylesheet_directory_uri();?>/images/avatars/Tiny 25px x 25px/Males/Joe.jpg" width="25" height="25" alt="Joe">
+                    <img src="<?php 
+                    echo get_image_via_ancestors('/images/avatars/Tiny 25px x 25px/Males/Joe.jpg');
+                    ?>" width="25" height="25" alt="Joe">
                     <a href="" title="nickname">nickname</a>
                 </dt>
             </dl>
