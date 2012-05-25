@@ -110,17 +110,15 @@ if ( ! function_exists( 'vinur_posted_on' ) ) :
  * @since Vinur 1.0
  */
 function vinur_posted_on() {
-    
-    printf(
-        __( '<cite class="author">by <a href="%1$s" title="%2$s" rel="bookmark">%3$s</a></cite> at <time datetime="%4$s">%5$s on %6$s</time>', 'vinur' ),
-        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_attr( sprintf( __( 'View all posts by %s', 'vinur' ), get_the_author() ) ),
-        esc_html( get_the_author() ),
-        esc_attr( get_the_date( 'c' ) ),
-        esc_html( get_the_time() ),
-        esc_html( get_the_date( 'F jS' ) )
-    );
-	
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'vinur' ),
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'vinur' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
 }
 endif;
 
@@ -132,7 +130,9 @@ endif;
 function vinur_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-        $all_the_cool_cats = get_categories( array( 'hide_empty' => 1, ) );
+		$all_the_cool_cats = get_categories( array(
+			'hide_empty' => 1,
+		) );
 
 		// Count the number of categories that are attached to the posts
 		$all_the_cool_cats = count( $all_the_cool_cats );

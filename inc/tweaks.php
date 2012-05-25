@@ -11,7 +11,7 @@
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
- * @since Vinur 1.0
+ * @since Vvinur 1.0
  */
 function vinur_page_menu_args( $args ) {
 	$args['show_home'] = true;

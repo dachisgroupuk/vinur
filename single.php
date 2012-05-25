@@ -7,25 +7,28 @@
  */
 
 get_header(); ?>
-<section id="posts">    
-    <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php vinur_content_nav( 'nav-above' ); ?>
+		<div id="primary" class="site-content">
+			<section id="content" role="main">
 
-        <?php get_template_part( 'content', 'single' ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-        <?php vinur_content_nav( 'nav-below' ); ?>
+				<?php vinur_content_nav( 'nav-above' ); ?>
 
-        <?php
-        // If comments are open or we have at least one comment, load up the comment template
-        if ( comments_open() || '0' != get_comments_number() ){
-            comments_template( '', true );
-        }
-        ?>
+				<?php get_template_part( 'content', 'single' ); ?>
 
-    <?php endwhile; // end of the loop. ?>
+				<?php vinur_content_nav( 'nav-below' ); ?>
 
-</section>   
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+			</section><!-- #content -->
+		</div><!-- #primary .site-content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
