@@ -1,143 +1,96 @@
 /*
 Theme Name: Vinur
-Theme URI: https://wpcom-themes.svn.automattic.com/Vinur/
-Author: Dachisgroup
-Author URI: http://dachisgroup.com/
-Description: Starter theme combining projects Cold Harbour and Nosy Narwhal
+Theme URI: http://www.headshift.com
+Author: Headshift
+Author URI: http://www.headshift.com
+Description: I'm also a reworking of the Cold Harbour created by the wonderful Headshift design and UX team. Originally based on the <code>_s</code> theme by Automattic
+
+Please use me as a parent for your child themes
+
 Version: 1.0
+License: GNU General Public License
+License URI: license.txt
 Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
+
+A lot of the basis for the responsive styles came from Mark Mitchells wonderful guidance http://www.withoutnations.com/
+
 */
 
-h1.page-title {
-		font-size:2.5em;
-		margin:10px 0 0 0;
-        padding: 0 3.125% 10px 3.125%;
-}
+/* =Reset
+-------------------------------------------------------------- */
 
-
-/* =Posts
------------------------------------------------ */
-#posts .entry-meta {
-    font-size: 1.3em;
-    line-height: 1.471em;
-}
-
-
-/* =Navigation
------------------------------------------------ */
-.post-navigation {
-    float: left;
-    width: 93.75%;
-    padding: 0 3.125% 10px 3.125%;
-    font-size: 1.7em;
-    line-height: 1.471em;
-}
-
-#content .nav-previous {
-	float: left;
-	width: 50%;
-}
-#content .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/* =Comments
------------------------------------------------ */
-
-.bypostauthor {
-}
-
-#posts #comments{
-    float: left;
-    width: 93.75%;
-    margin: 10px 0;
-    padding: 0 3.125% 10px 3.125%;
-}
-
-h2.comments-title {
-	font-size: 2.2em; 
-	line-height: 1em;
-	margin: 0; /*10px*/
-}
-#respond, h3#reply-title, #respond label, .nopassword, .nocomments {
-    font-size: 1.3em;
-    line-height: 1.6em;    
-}
-
-
-h3#reply-title{
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
 	margin: 0;
-    padding-bottom: 0.5em;
-    width: 93.75%;
-    clear: both;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
 }
-
-#respond label{
-    margin-top: 1em;
-	clear: both;
-    display: block;
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-#respond textarea {
-	width: 93.75%;
-    margin: 10px 0;
-    padding: 0.5em;
-    resize: vertical;
-    font-size: 1em;
-    line-height: 1.6em;
+body {
+	background: #fff;
 }
-
-
-.nopassword,
-.nocomments {
-	text-align: center;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
 }
-
-
-
-.commentlist li{
-    width: 93.75%;
-    clear:  both;
-    display: block;
+ol, ul {
+	list-style: none;
 }
-.commentlist li ul li{
-    width: 96.85%;
-    margin-left: 3.125%;
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
 }
-#posts article.comment{
-    clear: both;
-    padding: 3.125%;
-    margin: 0;
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
 }
-
-.comment-author{
-    font-size: 1.6em;
-    line-height: 1.8em;
-    clear: both;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
 }
-.comment-author .avatar{
-    float: left;
-    margin-right:  1em;
+blockquote, q {
+	quotes: "" "";
 }
-.comment-content{
-    padding-top: 3.125%;
-    clear: both;
+a:focus {
+	outline: thin dotted;
 }
-
-/* =Widgets
------------------------------------------------ */
-
-#sidebar aside.widget ul{
-	width: 93.75%; /* 300px/320px */
-	padding: 0 3.125% 20px 3.125%; /* 10px/320px */
-    font-size: 1.3em;
-    line-height: 1.6em;
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
 }
-
-
+a img {
+	border: 0;
+}

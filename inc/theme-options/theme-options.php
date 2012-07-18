@@ -74,14 +74,14 @@ add_filter( 'option_page_capability_vinur_options', 'vinur_option_page_capabilit
  *
  * This function is attached to the admin_menu action hook.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_theme_options_add_page() {
 	$theme_page = add_theme_page(
 		__( 'Theme Options', 'vinur' ),   // Name of page
 		__( 'Theme Options', 'vinur' ),   // Label in menu
-		'edit_theme_options',                    // Capability required
-		'theme_options',                         // Menu slug, used to uniquely identify the page
+		'edit_theme_options',             // Capability required
+		'theme_options',                  // Menu slug, used to uniquely identify the page
 		'vinur_theme_options_render_page' // Function that renders the options page
 	);
 }
@@ -126,7 +126,7 @@ function vinur_sample_select_options() {
 /**
  * Returns an array of sample radio options registered for Vinur.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_sample_radio_buttons() {
 	$sample_radio_buttons = array(
@@ -150,7 +150,7 @@ function vinur_sample_radio_buttons() {
 /**
  * Returns the default options for Vinur.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_get_default_theme_options() {
 	$default_theme_options = array(
@@ -167,7 +167,7 @@ function vinur_get_default_theme_options() {
 /**
  * Returns the options array for Vinur.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_get_theme_options() {
 	return get_option( 'vinur_theme_options', vinur_get_default_theme_options() );
@@ -226,7 +226,7 @@ function vinur_settings_field_sample_select_options() {
 /**
  * Renders the radio options setting field.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_settings_field_sample_radio_buttons() {
 	$options = vinur_get_theme_options();
@@ -257,7 +257,7 @@ function vinur_settings_field_sample_textarea() {
 /**
  * Returns the options array for Vinur.
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_theme_options_render_page() {
 	?>
@@ -283,7 +283,7 @@ function vinur_theme_options_render_page() {
  * @see vinur_theme_options_init()
  * @todo set up Reset Options action
  *
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 function vinur_theme_options_validate( $input ) {
 	$output = $defaults = vinur_get_default_theme_options();

@@ -1,9 +1,9 @@
-coldharbour = {	
+vinur = {
 	initFunctionName: function() {
 		jQuery();
     }
 };
 
 jQuery(document).ready(function() {
-	coldharbour.initFunctionName();
+	vinur.initFunctionName();
 });

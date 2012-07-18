@@ -14,11 +14,11 @@
 
 get_header(); ?>
 
-	<section id="posts">
-
+		<div id="primary" class="site-content">
+			<section id="content" role="main">
 			<?php if ( have_posts() ) : ?>
 
-				<?php vinur_content_nav( 'nav-above' ); ?>
+				<?php // vinur_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -48,7 +48,9 @@ get_header(); ?>
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>
-    </section>
+
+			</section><!-- #content -->
+		</div><!-- #primary .site-content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

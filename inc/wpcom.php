@@ -12,7 +12,7 @@ global $themecolors;
  * Set a default theme color array for WP.com.
  *
  * @global array $themecolors
- * @since Vinur 1.0
+ * @since vinur 1.0
  */
 $themecolors = array(
 	'bg' => '',

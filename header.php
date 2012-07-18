@@ -1,6 +1,6 @@
 <?php
 /**
- * The Header for Vinur.
+ * The Header for our theme.
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
@@ -8,19 +8,28 @@
  * @since Vinur 1.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html class="ie6" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+<meta name="viewport" content="width=device-width">
 
-    <meta name="viewport" content="width=device-width" />
-    <title><?php
+<!--Safari can detect that your website is able to run as an application - launch without the URL bar or any other Safari trimmings-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!--reset to latest IE rendering engine-->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+
+<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/images/touch/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/images/touch/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/touch/apple-touch-icon-57x57.png">
+
+<title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
 	 */
@@ -41,73 +50,36 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'vinur' ), max( $paged, $page ) );
 
 	?></title>
-    
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/images/touch/h/apple-touch-icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/touch/m/apple-touch-icon.png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/images/touch/l/apple-touch-icon-precomposed.png">
-    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/touch/l/apple-touch-icon.png">
-  
-    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
-    
-    <meta http-equiv="cleartype" content="on">
- 
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <!--[if lt IE 9]>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-    <![endif]-->
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-    <?php wp_head(); ?>
+<?php wp_head(); ?>
 
-     <!-- Modernizer <script src="javascripts/libs/modernizr.custom.21747.js"></script> -->
-    
-  	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/libs/respond.min.js"></script>
-	<![endif]-->
-    <!--[if IE 6]><script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/libs/DD_belatedPNG_0.0.8a-min.js"></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/fonts.css" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/application.css" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/widgets.css" />
 
 </head>
 
-<body <?php body_class(); ?> role="document">
+<body <?php body_class(); ?>>
+<div id="site" class="hfeed site">
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
 
-<div id="site" role="document">
-    
-    <?php do_action( 'before' ); ?>
-    
-    <header id="header" role="banner">
-      
-        <div class="alert-message warning hide" role="alert">
-            <a class="close" href="#">&times;</a>
-            <p>The old monks of Dunfermline were very fond of them. They had a great porpoise grant from the crown.</p>
-        </div>  
-        
-        <div id="profile">
-            <dl class="profile">
-                <dt id="nickname">
-                    <img src="<?php 
-                    echo get_image_via_ancestors('/images/avatars/Tiny 25px x 25px/Males/Joe.jpg');
-                    ?>" width="25" height="25" alt="Joe">
-                    <a href="" title="nickname">nickname</a>
-                </dt>
-            </dl>
-        </div>
-          
-        <hgroup>
-            <h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-        </hgroup><!-- #hgroup -->
-                    
-        <div id="access">
-            <div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
-            <div class="skip-link"><a class="assistive-text" href="#sidebar" title="Skip to secondary content">Skip to secondary content</a></div>
-        </div><!-- #access nav -->
-            
-        <nav id="navigation" role="navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-        </nav><!-- #main nav -->
-		
-    </header><!-- #header -->
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text"><?php _e( 'Menu', 'vinur' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'vinur' ); ?>"><?php _e( 'Skip to content', 'vinur' ); ?></a></div>
 
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav>
+	</header><!-- #masthead .site-header -->
 
-	<div id="content">
+	<div id="main">
