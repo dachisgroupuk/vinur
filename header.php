@@ -59,10 +59,6 @@
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/fonts.css" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/application.css" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/widgets.css" />
-
 </head>
 
 <body <?php body_class(); ?>>
