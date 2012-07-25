@@ -3,8 +3,8 @@
  * The template for displaying Author Archive pages.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Vinur
+ * @since Vinur 1.0
  */
 
 get_header(); ?>
