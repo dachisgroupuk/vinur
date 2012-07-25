@@ -45,7 +45,7 @@ MBP.hideUrlBar = function () {
 			}	
 		}, 15 );
 
-    if ( win.attachEvent ) {
+    if ( !win.addEventListener ) {
       win.attachEvent("onload", function(){
   			setTimeout(function(){
   				//reset to hide addr bar at onload
