@@ -132,6 +132,7 @@ if ( ! function_exists( 'vinur_scripts' ) ) :
        wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/javascripts/small-menu.js', 'jquery', '20120328', true );
        wp_enqueue_script( 'helper', get_template_directory_uri() . '/javascripts/helper.js', 'jquery', '20120328', true );
        wp_enqueue_script( 'twitter', 'http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js', 'jquery', '20120328', true );
+       wp_enqueue_script( 'smallmenu', get_template_directory_uri() . '/javascripts/libs/jquery.mobilemenu.min.js', 'jquery', '20120328', true );
        wp_enqueue_script( 'application', get_template_directory_uri() . '/javascripts/application.js', 'jquery', '20120328', true );
 
        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

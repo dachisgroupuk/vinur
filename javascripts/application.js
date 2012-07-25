@@ -35,6 +35,9 @@ vinur = {
 
 	chEmpty: function() {
 		jQuery("#sidebar").find("#twitter").empty().css("display","none");
+	}, 
+	chSmallMenu: function() {
+			jQuery('.main-navigation ul').mobileMenu();
 	}
 
 }
@@ -48,7 +51,9 @@ if (matchMedia) {
 function chEvent(mqDesktop) {
     if (mqDesktop.matches) {
         vinur.chTwitter();
+vinur.chSmallMenu();
     } else {
         vinur.chEmpty();
+		vinur.chSmallMenu();
     }
 }
