@@ -45,12 +45,22 @@ MBP.hideUrlBar = function () {
 			}	
 		}, 15 );
 
-		win.addEventListener( "load", function(){
-			setTimeout(function(){
-				//reset to hide addr bar at onload
-				win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
-			}, 0);
-		}, false );
+    if ( win.attachEvent ) {
+      win.attachEvent("onload", function(){
+  			setTimeout(function(){
+  				//reset to hide addr bar at onload
+  				win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+  			}, 0);
+  		}, false )
+    }
+    else {
+  		win.addEventListener( "load", function(){
+  			setTimeout(function(){
+  				//reset to hide addr bar at onload
+  				win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+  			}, 0);
+  		}, false );
+  	}
 	}
 };
 

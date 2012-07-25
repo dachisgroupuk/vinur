@@ -139,7 +139,7 @@ if ( ! function_exists( 'vinur_scripts' ) ) :
        }
 
        if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
-           wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/javascripts/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+           wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/javascripts/libs/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
        }
 
        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/stylesheets/font-awesome.css', array('style') );
