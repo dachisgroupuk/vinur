@@ -429,15 +429,18 @@ article .entry-content address {
 	font-size: 1.5em;
 	line-height: 1.4em;
 }
-
+.page-header, 
+#nav-above, 
 #nav-below {
 	width: 87.5%; /* 280px/320px */
 	padding: 10px 6.25%; /* 20px/320px */
+}
+#nav-above, 
+#nav-below {
 	clear:both;
 	font-size: 1.4em;
 	line-height: 1.5em;
 }
-
 .page-links {
 	clear: both;
 	font-size: 1.2em;
@@ -821,7 +824,8 @@ select#mm0 {
 		width: 94.79166%; /* 728px/768px */
 		padding: 20px 2.60416%; /* 20px/768px */
 	}
-
+	.page-header, 
+	#nav-above, 
 	#nav-below {
 		margin: 0;
 		width: 94.79166%; /* 728px/768px */
