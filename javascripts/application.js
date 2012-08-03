@@ -51,7 +51,6 @@ if (matchMedia) {
 function chEvent(mqDesktop) {
     if (mqDesktop.matches) {
         vinur.chTwitter();
-vinur.chSmallMenu();
     } else {
         vinur.chEmpty();
 		vinur.chSmallMenu();
