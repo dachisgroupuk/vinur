@@ -263,7 +263,8 @@ function vinur_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options', 'vinur' ), get_current_theme() ); ?></h2>
+        <?php $theme_name = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_current_theme(); ?>
+		<h2><?php printf( __( '%s Theme Options', 'vinur' ), $theme_name ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
